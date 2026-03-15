@@ -27,6 +27,9 @@ def solve():
         ans = S[R] - S[L-1]
         print(f"{L}日目から{R}日目の売上: {ans}")
 
+    for i in range(1, 10):
+        print(i)
+
 
 if __name__ == "__main__":
     solve()
