@@ -34,3 +34,19 @@ $\mathcal{O}(N^2)$ の処理を、いかに $\mathcal{O}(N)$ や $\mathcal{O}(N 
   - リストの `in` 検索（$\mathcal{O}(N)$）を、`set` を使って $\mathcal{O}(1)$ に落とすデータ構造の最適化。
 - [ ] **6. しゃくとり法 (Two Pointers / Sliding Window)**
   - 条件を満たす連続する部分列を、2つのインデックスを伸縮させながら $\mathcal{O}(N)$ で見つける手法。
+
+  ## 🛠️ 必須・標準ライブラリリスト (Core Libraries)
+Pythonの強力なエコシステム。これらは「一から実装する」のではなく「呼吸をするようにインポートして使う」こと。
+
+- [x] **`bisect` (二分探索)**
+  - `bisect_left(A, x)`: ソート済み配列 `A` に `x` を挿入するインデックスを $\mathcal{O}(\log N)$ で取得。
+- [ ] **`collections.deque` (キュー・スタック)**
+  - 幅優先探索（BFS）で必須。通常のリスト（`list.pop(0)`）は先頭の削除に $\mathcal{O}(N)$ かかるが、`deque.popleft()` なら $\mathcal{O}(1)$ で処理できる。
+- [ ] **`collections.Counter` / `collections.defaultdict` (集計・辞書)**
+  - 配列内の要素の出現回数を一瞬でカウントする。`defaultdict` は「キーが存在しない時の初期値（0など）」を自動設定してくれるため、エラー防止に極めて有効。
+- [ ] **`itertools` (順列・組み合わせ・累積和)**
+  - `permutations` (順列 $\dots P_r$)、`combinations` (組み合わせ $\dots C_r$) を `for` ループで簡単に生成できる。全探索問題の強力な武器。
+  - `itertools.accumulate`: 実は**Day1で書いた「累積和」を1行で作ってくれる関数**。
+- [ ] **`sys` (システム操作・高速入出力)**
+  - `sys.setrecursionlimit(10**6)`: 深さ優先探索（DFS）で再帰関数を使う際、Pythonのデフォルト制限（1000回）を突破するために必須。
+  - `sys.stdin.read` / `sys.stdin.readline`: 10万行以上の入力を受け取る際、通常の `input()` ではタイムアウトするため、これを用いて高速化する。

@@ -9,7 +9,11 @@
                 "python.defaultInterpreterPath": "/usr/local/bin/python",
                 "editor.formatOnSave": true,
                 "editor.rulers": [80],
-                "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }"
+                "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
+                "python.analysis.autoImportCompletions": true,
+                "editor.codeActionsOnSave": {
+                    "source.organizeImports": "explicit"
+                }
             },
             "extensions": [
                 "ms-python.python",
